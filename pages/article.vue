@@ -8,6 +8,9 @@
 
 <script>
   export default {
+    validate ({ query }) {
+      return ['akg', 'quruli'].includes(query.name)
+    },
     data () {
       return {
         title: null,
