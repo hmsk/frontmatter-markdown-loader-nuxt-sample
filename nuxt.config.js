@@ -1,3 +1,5 @@
+import FMMode from 'frontmatter-markdown-loader/mode'
+import path from 'path'
 
 export default {
   mode: 'universal',
@@ -7,14 +9,21 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   loading: { color: '#fff' },
   build: {
-    extend (config, ctx) {
+    extend (config, _ctx) {
+      config.module.rules.push(
+        {
+          test: /\.md$/,
+          loader: 'frontmatter-markdown-loader',
+          include: path.resolve(__dirname, 'articles'),
+          options: {
+            mode: [FMMode.VUE_COMPONENT]
+          }
+        }
+      )
     }
   }
 }
