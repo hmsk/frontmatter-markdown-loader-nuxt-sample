@@ -12,6 +12,7 @@ export default {
     ]
   },
   loading: { color: '#fff' },
+  css: ['github-markdown-css'],
   build: {
     extend (config, _ctx) {
       config.module.rules.push(
@@ -20,7 +21,10 @@ export default {
           loader: 'frontmatter-markdown-loader',
           include: path.resolve(__dirname, 'articles'),
           options: {
-            mode: [FMMode.VUE_COMPONENT]
+            mode: [FMMode.VUE_COMPONENT],
+            vue: {
+              root: 'markdown-body'
+            }
           }
         }
       )
