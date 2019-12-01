@@ -18,8 +18,13 @@
       }
     },
     created () {
-      this.attributes = require(`~/articles/${this.$route.query.name}.md`).attributes
-      this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then(({ vue }) => vue.component)
+      const markdown = require(`~/articles/${this.$route.query.name}.md`)
+      this.attributes = markdown.attributes
+      this.selectedArticle = markdown.vue.component
+
+      // Use Async Components for the benefit of code splitting
+      // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
+      // this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then(({ vue }) => vue.component)
     }
   }
 </script>
