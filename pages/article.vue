@@ -1,7 +1,7 @@
 <template>
   <div>
     <small>This component mounts <code>~/articles/${file name which is passed through "name" query on URL}.md</code> as Vue component dynamically</small>
-    <h2>{{ title }}</h2>
+    <h2>{{ attributes.title }}</h2>
     <component :is="selectedArticle" />
   </div>
 </template>
@@ -13,15 +13,13 @@
     },
     data () {
       return {
-        title: null,
+        attributes: {},
         selectedArticle: null
       }
     },
     created () {
-      this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then((md) => {
-        this.title = md.attributes.title
-        return md.vue.component
-      })
+      this.attributes = require(`~/articles/${this.$route.query.name}.md`).attributes
+      this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then(({ vue }) => vue.component)
     }
   }
 </script>
