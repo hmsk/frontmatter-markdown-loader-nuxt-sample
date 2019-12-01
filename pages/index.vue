@@ -7,7 +7,7 @@
         Import dynamically
         <ul>
           <li><nuxt-link to="/article?name=akg">akg.md</nuxt-link></li>
-          <li><nuxt-link to="/article?name=qurkli">quruli.md</nuxt-link></li>
+          <li><nuxt-link to="/article?name=quruli">quruli.md</nuxt-link></li>
         </ul>
       </li>
       <li><nuxt-link to="/quruli">Run component on markdown</nuxt-link></li>
