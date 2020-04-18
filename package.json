@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "frontmatter-markdown-loader": "^3.3.0",
-    "github-markdown-css": "^3.0.1",
+    "github-markdown-css": "^4.0.0",
     "nuxt": "^2.12.2"
   },
   "devDependencies": {}
