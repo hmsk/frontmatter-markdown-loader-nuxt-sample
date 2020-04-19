@@ -1,5 +1,7 @@
 import FMMode from 'frontmatter-markdown-loader/mode'
 import path from 'path'
+import markdownIt from 'markdown-it'
+import markdownItPrism from 'markdown-it-prism'
 
 export default {
   mode: 'universal',
@@ -12,7 +14,10 @@ export default {
     ]
   },
   loading: { color: '#fff' },
-  css: ['github-markdown-css'],
+  css: [
+    'github-markdown-css',
+    'prismjs/themes/prism.css'
+  ],
   build: {
     extend (config, _ctx) {
       config.module.rules.push(
@@ -24,7 +29,8 @@ export default {
             mode: [FMMode.VUE_COMPONENT],
             vue: {
               root: 'markdown-body'
-            }
+            },
+            markdownIt: markdownIt({ html: true }).use(markdownItPrism)
           }
         }
       )

@@ -15,5 +15,7 @@
     "github-markdown-css": "^4.0.0",
     "nuxt": "^2.12.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "markdown-it-prism": "^2.0.5"
+  }
 }
