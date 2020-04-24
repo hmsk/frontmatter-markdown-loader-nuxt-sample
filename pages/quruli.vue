@@ -1,6 +1,6 @@
 <template>
   <div>
-    <small>This component mounts <code>~/articles/quruli.md</code> as Vue component which includes a custome element for <code>LinkToWikipedia</code></small>
+    <small>This component mounts <code>~/articles/quruli.md</code> as Vue component which includes a custom element for <code>LinkToWikipedia</code></small>
     <h2>{{ title }}</h2>
     <quruli-article />
   </div>
