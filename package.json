@@ -1,6 +1,6 @@
 {
   "name": "frontmatter-markdown-loader-nuxt-sample",
-  "version": "3.4.0",
+  "version": "3.4.3",
   "description": "Nuxt app to demonstrate the usage of frontmatter-markdown-loader",
   "author": "hmsk",
   "private": true,
@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "frontmatter-markdown-loader": "3.4.0",
+    "frontmatter-markdown-loader": "3.4.3",
     "github-markdown-css": "^4.0.0",
     "nuxt": "^2.12.2"
   },
