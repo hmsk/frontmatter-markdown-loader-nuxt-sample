@@ -8,12 +8,12 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt build --target static && nuxt export"
   },
   "dependencies": {
     "frontmatter-markdown-loader": "3.6.0",
     "github-markdown-css": "^4.0.0",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.13.0"
   },
   "devDependencies": {}
 }
