@@ -7,6 +7,8 @@
 </template>
 
 <script>
+  import LinkToWikipedia from "../components/LinkToWikipedia"
+
   export default {
     validate ({ query }) {
       return ['akg', 'quruli'].includes(query.name)
@@ -20,11 +22,19 @@
     created () {
       const markdown = require(`~/articles/${this.$route.query.name}.md`)
       this.attributes = markdown.attributes
-      this.selectedArticle = markdown.vue.component
+      this.selectedArticle = {
+        components: { LinkToWikipedia },
+        extends: markdown.vue.component
+      }
 
       // Use Async Components for the benefit of code splitting
       // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
-      // this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then(({ vue }) => vue.component)
+      // this.selectedArticle = () => import(`~/articles/${this.$route.query.name}.md`).then(({ vue }) => {
+      //   return {
+      //     components: { LinkToWikipedia },
+      //     extends: vue.component
+      //   }
+      // })
     }
   }
 </script>
