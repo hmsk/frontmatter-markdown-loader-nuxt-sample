@@ -2,6 +2,11 @@
 
 > Nuxt app to demonstrate the usage of frontmatter-markdown-loader
 
+## Prior to using this template...
+
+You are trying to build your blogging system on Nuxt.js with frontmatter-markdown-loader?
+Highly recommend using [@nuxt/content](https://content.nuxtjs.org/) instead 😉
+
 ## Build Setup
 
 ``` bash
